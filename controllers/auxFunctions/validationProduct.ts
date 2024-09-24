@@ -12,8 +12,7 @@ export const validateProduct = async(name:string, price:number, image:any, descr
         console.log(errors)
     }else{
         if(errors != ''){
-            //revisar esto
-            // fs.unlinkSync('./public/uploads/'+image.filename);
+            fs.unlinkSync('./public/uploads/'+image.filename);
         }
     };
     return errors
