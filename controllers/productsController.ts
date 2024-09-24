@@ -46,17 +46,17 @@ export const updateProduct = async(req:any,res:any) =>{
         const {id} = req.params;
         const {name, price, description} = req.body;
         let img = '';
-        let values = {name:name,price:price,description:description,img};
+        let values:any = {name:name,price:price,description:description};
         if(req.file != null){
             img = '/uploads/'+req.file.filename;
-            values = {name:name,price:price,description:description,img:img};
+            values = {name:name,price:price,description:description,image:img};
             await  deleteImg(id)
         }
 
         const validate = await validateProduct(name, price, req.file, description);
         console.log(validate)
         //revisar el validate sobre la imagen
-        if (validate){
+        if (validate == ''){
             await ProductModel.updateOne({_id:id},{$set: values});
             return res.status(200).json({status: true, message: 'Product updated successfully'});
         }
