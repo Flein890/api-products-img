@@ -13,7 +13,7 @@ export class Server {
     constructor() {
 
         this.app = express();
-        this.port= 5000;
+        this.port= process.env.PORT;
         this.productsPath="/api";
 
 

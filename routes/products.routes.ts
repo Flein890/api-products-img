@@ -13,4 +13,4 @@ routes.delete("/products/:id", deleteProduct);
 
 //revisar todo lo relacionado con el put
 
-export default routes
+export default routes;
