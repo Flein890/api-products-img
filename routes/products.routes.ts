@@ -11,6 +11,5 @@ routes.post("/products",uploadImage.single("image") ,saveProduct);
 routes.put("/products/:id",uploadImage.single("image") ,updateProduct);
 routes.delete("/products/:id", deleteProduct);
 
-//revisar todo lo relacionado con el put
 
 export default routes;
