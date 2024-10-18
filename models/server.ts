@@ -32,7 +32,7 @@ export class Server {
      middlewares():void{
         //Activa el CORS (Cross Origin resource sharing), esto permite peticiones de diferentes origenes para acceder
         //a los recursos de la aplicación
-         this.app.use(cors());
+         this.app.use(cors({ origin: '*' }));
         //-----------------------------------------------------------------------------------------------------------//
         //Manejo de datos JSON en aplicaciones Express
          this.app.use(express.json());
@@ -61,3 +61,5 @@ export class Server {
       }
 
 }
+
+

@@ -5,6 +5,10 @@ import { uploadImage } from "../middlewares/storage";
 
 const routes = Router();
 
+
+const cors = require('cors');
+app.use(cors({ origin: '*' }));
+
 routes.get("/products", getProducts);
 routes.get("/products/:id", getProducts);
 routes.post("/products",uploadImage.single("image") ,saveProduct);
