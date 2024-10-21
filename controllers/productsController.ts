@@ -41,7 +41,7 @@ export const saveProduct = async(req:any,res:any) =>{
         }
     
     } catch (error) {
-        return res.status(500).json({status: false, errors: error});
+        return res.status(501).json({status: false, errors: error});
     }
 }
 //_____________________________________________________________________________________===>>>>>
