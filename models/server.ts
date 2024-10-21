@@ -43,8 +43,10 @@ export class Server {
          //morgan para ver las peticiones
          this.app.use(morgan("dev"));
          //Carpeta publica
-         this.app.use(express.static("public"));
-         //si no se encuentra el endpoint se muestra el error
+        //  this.app.use(express.static("public"));
+        this.app.use("/uploads",express.static('public/uploads'))
+        
+//          si no se encuentra el endpoint se muestra el error
 //          this.app.use((req,res) => {
 //          res.status(404).json({
 //          status: false,
